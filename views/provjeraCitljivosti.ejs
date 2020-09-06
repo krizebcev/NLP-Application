@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <% include partials/head %>
+  </head>
+  <body>
+    <% include partials/menu %>
+    <div class="container" id="textInputForm">
+      <form action="/provjeraCitljivosti" method="get">
+        <div class="form-group">
+          <label for="inputTextarea"
+            >Ovdje unesite tekst nad kojim želite izvršiti analizu:</label
+          >
+          <textarea
+            class="form-control"
+            id="inputTextarea"
+            rows="8"
+            name="inputTextarea"
+          >
+<%= inputText %></textarea
+          >
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-lg">
+            Provjeri čitljivost teksta
+          </button>
+        </div>
+      </form>
+    </div>
+    <% if (Object.keys(rezultat).length !== 0 && rezultat.constructor ===
+    Object) { %>
+    <div class="container">
+      <div class="alert alert-info" role="alert" id="alertMessage">
+        <h4 class="alert-heading">Obavijest!</h4>
+        <p><%= rezultat.rezultatTekst %></p>
+        <hr />
+        <p>
+          Broj rečenica u zadanom tekstu iznosi
+          <strong><%= rezultat.brojRecenica %></strong>
+        </p>
+        <hr />
+        <p>
+          Broj riječi u zadanom tekstu iznosi
+          <strong><%= rezultat.brojRijeci %></strong>
+        </p>
+        <hr />
+        <p>
+          Broj kompleksnih višesložnih riječi u zadanom tekstu iznosi
+          <strong><%= rezultat.brojKompleksnihVisesloznihRijeci %></strong>
+        </p>
+        <hr />
+        <p>
+          Broj znakova u zadanom tekstu iznosi
+          <strong><%= rezultat.brojSlovaBrojeva %></strong>
+        </p>
+      </div>
+    </div>
+    <% } %> <% include partials/footer %>
+  </body>
+  <% include partials/script %>
+</html>

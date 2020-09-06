@@ -1,0 +1,22 @@
+{
+  "name": "nlpappdiplrad",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "automated-readability": "^1.0.5",
+    "cookie-parser": "~1.4.4",
+    "dale-chall-formula": "^1.0.5",
+    "debug": "~2.6.9",
+    "dictionary-en": "^3.0.1",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "gunning-fog": "^1.0.6",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "nspell": "^2.1.2",
+    "syllable": "^4.1.0"
+  }
+}

@@ -1,0 +1,60 @@
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
+}
+
+a {
+  color: #00b7ff;
+}
+
+button {
+  margin: 5px;
+}
+
+.navbar {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 0;
+  border-radius: 0;
+  margin-bottom: 0;
+  font-size: 12px;
+  letter-spacing: 3px;
+  box-shadow: 2px 2px 15px #888888;
+}
+
+.nav-item {
+  font-size: 11px;
+  letter-spacing: 2px;
+  margin-top: 20px;
+}
+
+.container {
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+
+#textInputForm {
+  border: 1px solid #888888;
+  border-radius: 10px;
+  padding: 40px;
+  box-shadow: 2px 2px 15px #888888;
+}
+
+#alertMessage {
+  margin-bottom: 40px;
+}
+
+footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+}

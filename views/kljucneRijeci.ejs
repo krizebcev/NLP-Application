@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <% include partials/head %>
+  </head>
+  <body>
+    <% include partials/menu %>
+    <div class="container" id="textInputForm">
+      <form action="/kljucneRijeciFraze" method="get">
+        <div class="form-group">
+          <label for="inputTextarea"
+            >Ovdje unesite tekst nad kojim želite izvršiti analizu:</label
+          >
+          <textarea
+            class="form-control"
+            id="inputTextarea"
+            rows="8"
+            name="inputTextarea"
+          >
+<%= inputText %></textarea
+          >
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-lg">
+            Izdvoji ključne riječi i ključne fraze
+          </button>
+        </div>
+      </form>
+    </div>
+    <% if (kljucneRijeci.length > 0) { %>
+    <div class="container">
+      <div class="alert alert-info" role="alert">
+        Prikaz deset ključnih riječi s najvećim brojem pojavljivanja unutar
+        zadanog teksta.
+      </div>
+      <table class="table table-hover table-striped table-bordered table-sm">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Ključna riječ</th>
+            <th scope="col">Broj pojavljivanja</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% kljucneRijeci.forEach( kljRijec => { %>
+          <tr>
+            <th scope="row"><%= brojacKljRijeci++ %></th>
+            <td><%= kljRijec.rijec %></td>
+            <td><%= kljRijec.value %></td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+    <% } %> <% if (kljucneFraze.length > 0) { %>
+    <div class="container">
+      <div class="alert alert-info" role="alert">
+        Prikaz ključnih fraza koje se pojavljuju barem dva puta unutar zadanog
+        teksta.
+      </div>
+      <table class="table table-hover table-striped table-bordered table-sm">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Ključna fraza</th>
+            <th scope="col">Broj pojavljivanja</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% kljucneFraze.forEach( kljFraza => { %>
+          <tr>
+            <th scope="row"><%= brojacKljFraze++ %></th>
+            <td><%= kljFraza.fraza %></td>
+            <td><%= kljFraza.value %></td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+    <% } %> <% if (kljucneFraze.length == 0 && obavljenZahtjev == true) { %>
+    <div class="container">
+      <div class="alert alert-info" role="alert">
+        <h4 class="alert-heading">Obavijest!</h4>
+        <p>
+          U tekstu kojeg ste upisali nema niti jedna ključna fraza koja se
+          pojavljuje barem dva puta.
+        </p>
+      </div>
+    </div>
+    <% } %> <% include partials/footer %>
+  </body>
+  <% include partials/script %>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <% include partials/head %>
+  </head>
+  <body>
+    <% include partials/menu %>
+    <div class="container" id="textInputForm">
+      <form action="/jednostavnijeAlternativneRijeci" method="get">
+        <div class="form-group">
+          <label for="inputTextarea"
+            >Ovdje unesite tekst nad kojim želite izvršiti analizu:</label
+          >
+          <textarea
+            class="form-control"
+            id="inputTextarea"
+            rows="5"
+            name="inputTextarea"
+          >
+<%= inputText %></textarea
+          >
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-lg">
+            Pronađi jednostavnije alternativne riječi
+          </button>
+        </div>
+      </form>
+    </div>
+    <% if (rezultat.length > 0) { %>
+    <div class="container">
+      <div class="alert alert-warning" role="alert" id="alertMessage">
+        <h4 class="alert-heading">Upozorenje!</h4>
+        <p>
+          <i>
+            Jednostavnije alternativne riječi se preporučuje koristiti umjesto
+            riječi koje mogu biti komplicirane za neke čitatelje ili kako bi se
+            pojednostavio zadani tekst.</i
+          >
+        </p>
+        <hr />
+        <% rezultat.forEach( recenica => { %>
+        <p><%= recenica %></p>
+        <hr />
+        <% }); %>
+      </div>
+    </div>
+    <% } %> <% if (rezultat.length == 0 && obavljenZahtjev == true) { %>
+    <div class="container">
+      <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">Odlično!</h4>
+        <p>
+          U tekstu kojeg ste upisali nema potrebe za jednostavnijim
+          alternativnim riječima.
+        </p>
+      </div>
+    </div>
+    <% } %><% include partials/footer %>
+  </body>
+  <% include partials/script %>
+</html>
