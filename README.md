@@ -7,7 +7,7 @@ Functionality which checks the input text for any unhelpful assuming phrases suc
 <img alt="Check for unhelpful assuming phrases" src="https://github.com/krizebcev/NLP-Application/blob/master/readme_imgs/image--006.png" width="732">
 <img alt="Check for unhelpful assuming phrases" src="https://github.com/krizebcev/NLP-Application/blob/master/readme_imgs/image--007.png" width="732">
 
-## Check for for weak and mitigating wording
+## Check for weak and mitigating wording
 Functionality which checks the input text for weak and mitigating wording.
 
 <img alt="Check for for weak and mitigating wording" src="https://github.com/krizebcev/NLP-Application/blob/master/readme_imgs/image--010.png" width="732">
